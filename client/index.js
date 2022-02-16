@@ -37,11 +37,13 @@ async function createBlog(e) {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      "content-Type": "application/json",
+      "Content-Type": "application/json",
     },
   };
 
-  const res = await fetch("127.0.0.1:3000/blogs", options);
+  const res = await (
+    await fetch("http://localhost:3000/blogs", options)
+  ).json();
   showBlog(res);
 }
 
@@ -65,6 +67,6 @@ function showBlog(data) {
   title.textContent = data.title;
   author.textContent = `${data.author} - ${date}`;
   content.textContent = data.content;
-  
+
   window.history.pushState("object or string", "Title", data.route);
 }
