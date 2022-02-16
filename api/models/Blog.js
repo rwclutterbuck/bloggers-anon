@@ -51,7 +51,7 @@ class Blog {
   static create(data) {
     return new Promise(async (resolve, reject) => {
       try {
-        let blog = await db.query(
+        let blogData = await db.query(
           `INSERT INTO blogs (title, author, content, year, month, day)
         VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING *;`,
@@ -64,7 +64,7 @@ class Blog {
             data.day,
           ]
         );
-        let newBlog = new Blog(blog);
+        let newBlog = new Blog(blogData);
         resolve(newBlog);
       } catch (err) {
         reject("Blog could not be created");
