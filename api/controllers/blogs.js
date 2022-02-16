@@ -30,9 +30,9 @@ async function create(req, res) {
       .split(" ")[0]
       .toString()
       .split("/");
-    data.year = date[2];
-    data.month = date[1];
-    data.day = date[0];
+    data.year = parseInt(date[2]);
+    data.month = parseInt(date[1]);
+    data.day = parseInt(date[0]);
     const blog = await Blog.create(data);
     res.status(201).json(blog);
   } catch (err) {

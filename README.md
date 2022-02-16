@@ -1,4 +1,4 @@
-# Welcome to The Reading Room!
+# Welcome to BlogIt!
 
 ![Screenshot](/images/screenshot.png)
 
@@ -13,6 +13,7 @@ Note: Please ignore folder `fingerprintjs`. It has been left in on purpose but d
 - [Changelog](#changelog)
 - [Challenges](#challenges)
 - [Bugs](#bugs)
+- [Future Implementations](#future--implementations)
 
 ## Installation & Usage
 
@@ -32,22 +33,47 @@ Note: Please ignore folder `fingerprintjs`. It has been left in on purpose but d
 - Cors
 - Express
 - pg
+- http-server
+- dayjs
 
 ## Changelog
 
-- Initial commit
-- (origin/feedback) GitHub Classroom Feedback
-- Setting up GitHub Classroom Feedback
-- Move dev_seeds to migrations
-- Rearranged files to work
-- Add --legacy-watch so nodemon works on windows
-- Fix SQL JOIN command
-- Working SHOW & CREATE routes
-- Working author INDEX & SHOW routes
-- Remove console.logs
-- Set up destroy route
-- Fix db to allow for null abstract, yrofpub
-- Create README.md
+Note: Read TRUTH.md for our initial ideas!
+
+IN REVERSE ORDER FOR YOUR CONVENIENCE!
+
+- Implement dayjs
+- Add dayjs to package.json
+- Delete unneeeded comments
+- Rearrange fingerprint files
+- (upstream/dev-richard) current system stats
+- make SPA using 404.html w/ http-server
+- add fetch requests to server
+- Attempt to set up fingerprinting
+- Rename variables
+- Update single test
+- Got INDEX, SHOW, and CREATE routes working
+- Add --legacy-watch to npm start command
+- Changed blogs_year_check to correct value
+- Minor test suite updates
+- Set up INDEX, SHOW, and CREATE routes
+- Remove unwanted line
+- Set up Blog class for GET, POST requests
+- Set up integration tests for blog routes
+- Set up test seeds and app - integrstion tests
+- Renamed tables
+- Add outline for DELETE route
+- change input margins to paddings
+- website layout complete
+- Set up server.js
+- Set up outline for blog routes
+- Install npm packages
+- Setup docker-compose.yaml
+- Create db setup&seed files
+- move index.html inside of client
+- Create filebase
+- basic setup for README and index.html
+- source of truth
 
 ## Challenges
 
@@ -55,8 +81,11 @@ Note: Please ignore folder `fingerprintjs`. It has been left in on purpose but d
 
 ## Bugs
 
--
+- dayjs doesn't work
 
 ## Future Implementations
 
 - Implement fingerprintjs to remember users
+  - Allow said users to edit posts
+  - Allow them to delete posts
+- Allow searching of posts by day, month, and year
