@@ -59,4 +59,4 @@ Note: Please ignore folder `fingerprintjs`. It has been left in on purpose but d
 
 ## Future Implementations
 
-- Implement fingerprintjs
+- Implement fingerprintjs to remember users

@@ -1,3 +1,5 @@
+-- ---------------- PLEASE IGNORE THIS FILE ---------------------------
+
 DROP TABLE IF EXISTS fingerprints;
 
 CREATE TABLE fingerprints (

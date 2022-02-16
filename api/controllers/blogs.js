@@ -27,27 +27,8 @@ async function create(req, res) {
   }
 }
 
-// SET UP ROUTES FOR REQUESTING POSTS BY DATE -------
-
-// async function showByYr(req, res) {}
-
-// async function showByMonth(req, res) {}
-
-// async function showByDay(req, res) {}
-
-// SET UP CRUD ROUTES -------------------------------
-
-// async function update(req, res) {}
-
-// async function destroy(req, res) {}
-
 module.exports = {
   index,
-  // showByYr,
-  // showByMonth,
-  // showByDay,
   show,
   create,
-  // update,
-  // destroy,
 };

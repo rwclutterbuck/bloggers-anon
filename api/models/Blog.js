@@ -36,18 +36,6 @@ class Blog {
     });
   }
 
-  // static get byYear(year) {
-  //   return new Promise(async (resolve, reject) => {
-  //     try {
-  //       let blogData = await db.query(`SELECT * FROM blogs WHERE year = $1;`, [year]);
-  //       let blogs = blogData.rows.map((b) => new Blog(b));
-  //       resolve(blogs);
-  //     } catch (err) {
-  //       reject("Blogs not found");
-  //     }
-  //   });
-  // }
-
   static create(data) {
     return new Promise(async (resolve, reject) => {
       try {
@@ -69,7 +57,6 @@ class Blog {
         resolve(newBlog);
       } catch (err) {
         reject(err);
-        // reject("Blog could not be created");
       }
     });
   }
