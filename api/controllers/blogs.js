@@ -25,9 +25,14 @@ async function show(req, res) {
 async function create(req, res) {
   try {
     const data = req.body;
-    data.year = dayjs().format("DD/MM/YYYY").toString().split("/")[2];
-    data.month = dayjs().format("DD/MM/YYYY").toString().split("/")[1];
-    data.day = dayjs().format("DD/MM/YYYY").toString().split("/")[0];
+    let date = dayjs()
+      .format("DD/MM/YYYY HH:mm:ss")
+      .split(" ")[0]
+      .toString()
+      .split("/");
+    data.year = date[2];
+    data.month = date[1];
+    data.day = date[0];
     const blog = await Blog.create(data);
     res.status(201).json(blog);
   } catch (err) {
