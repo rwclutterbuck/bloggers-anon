@@ -1,10 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlogIt</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogIt</title>
+    <!-- add favicon -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="" class="card">
+      <input
+        type="text"
+        class="title"
+        name="title"
+        id="title"
+        placeholder="title"
+      />
+      <input
+        type="text"
+        class="author"
+        name="author"
+        id="author"
+        placeholder="your name"
+      />
+      <textarea
+        name="content"
+        id="content"
+        class="content"
+        placeholder="blog"
+      ></textarea>
+      <button type="submit" class="button">PUBLISH</button>
+    </form>
+  </body>
+  <script src="./index.js"></script>
 </html>

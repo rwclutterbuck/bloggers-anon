@@ -1,0 +1,64 @@
+:root {
+  --primary: rgb(148 163 184);
+  --secondary: rgb(226 232 240);
+  --background: rgb(30 41 59);
+}
+
+input,
+textarea {
+  border: none;
+  margin: 0.25rem 0;
+  background-color: var(--primary);
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background-color: var(--secondary);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+}
+
+.card {
+  display: grid;
+  justify-content: center;
+  background-color: var(--primary);
+  padding: 2rem;
+  width: fit-content;
+  min-width: 60vw;
+  margin: 1rem auto;
+}
+
+.title {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.author {
+  font-size: 0.75rem;
+}
+
+.content {
+  font-size: 1rem;
+}
+
+.button {
+  width: 15ch;
+  height: 2.5rem;
+  justify-self: center;
+  background-color: var(--secondary);
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    margin: 0;
+  }
+}

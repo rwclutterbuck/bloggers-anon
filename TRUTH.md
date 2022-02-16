@@ -1,12 +1,12 @@
 # Source of Truth
 
 ## Frontend
-- [ ] Bulma to create site
-  - [ ] Form containing
-    - input; text; title
-    - input; text; author
-    - input; textarea; content; expands as user types
-    - button; submit;
+- [ ] CSS to create site
+  - [x] Form containing
+    - [x] input; text; title
+    - [x] input; text; author
+    - [x] input; textarea; content; expands as user types
+    - [x] button; submit;
 - [ ] Link submit button to server
 - [ ] If time allows
   - [ ] Auth; fingerprintjs
