@@ -38,3 +38,5 @@ class Fingerprint {
     });
   }
 }
+
+module.exports = Fingerprint;

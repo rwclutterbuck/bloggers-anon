@@ -28,8 +28,11 @@ VALUES
   2
 );
 
--- INSERT INTO fingerprints (hash)
--- VALUES
--- (
-  
--- )
+INSERT INTO fingerprints (hash)
+VALUES
+(
+  '15a3c991a950c998656f06046df19cf1'
+),
+(
+  '897561602fd1b6296870051cee6ed6ee'
+)

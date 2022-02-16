@@ -1,4 +1,4 @@
-import FingerprintJS from "@fingerprintjs/fingerprintjs";
+const { FingerprintJS } = require("@fingerprintjs/fingerprintjs");
 
 const Fingerprint = require("../models/Fingerprint");
 
@@ -9,11 +9,10 @@ async function correctFingerprint(req, res) {
       const fp = await fpPromise;
       const result = await fp.get();
       // console.log(result.visitorId);
+      const fingerprint = new Fingerprint(result.visitorId);
+      const boolean = fingerprint.checker();
+      res.json({ access: boolean });
     })();
-
-    const fingerprint = new Fingerprint(result.visitorId);
-    const boolean = fingerprint.checker();
-    res.json({ access: boolean });
   } catch (err) {
     res.status().json({ err });
   }
