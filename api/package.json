@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js --legacy-watch",
+    "start": "index.js",
+    "dev": "nodemon index.js --legacy-watch",
     "test": "jest --watch --silent"
   },
   "keywords": [],
