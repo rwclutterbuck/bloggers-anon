@@ -1,0 +1,49 @@
+services:
+  client:
+    container_name: RN_client
+    # build: ./client
+    image: node:latest
+    ports:
+      - 8080:8080
+    working_dir: /code
+    volumes:
+      - type: bind
+        source: ./client
+        target: /code
+    command: ["python -m http.server"]
+  api:
+    container_name: RN_api
+    image: node:latest
+    working_dir: /code
+    ports:
+      - 3000:3000
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+    environment:
+      - PGUSER=RN
+      - PGHOST=db
+      - PGPASSWORD=RheartsLinux
+      - PGDATABASE=blog_anon
+      - PGPORT=5432
+      - NODE_ENV=development
+    depends_on:
+      - db
+    command: bash -c "npm install && npm start"
+
+  db:
+    container_name: RN_db
+    image: postgres:latest
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+      - "./db/migrations:/docker-entrypoint-initdb.d/:ro"
+    environment:
+      - POSTGRES_DB=blog_anon
+      - POSTGRES_USER=RN
+      - POSTGRES_PASSWORD=RheartsLinux
+volumes:
+  dbdata:
+networks:
+  default:
+    name: RN_api
