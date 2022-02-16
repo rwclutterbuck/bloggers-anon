@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS blogs;
+DROP TABLE IF EXISTS fingerprints;
 
-CREATE TABLE blogs (
+CREATE TABLE fingerprints (
   id serial PRIMARY KEY,
   hash VARCHAR(64)
 )
