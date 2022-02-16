@@ -7,7 +7,7 @@ VALUES
     'Test Man 1', 
     $str$Test blog 1 description$str$,
     2022,
-    01,
+    1,
     23,
     1
 ),
@@ -16,7 +16,7 @@ VALUES
     'Test Man 2', 
     $str$Test blog 2 description$str$,
     2022,
-    01,
+    1,
     22,
     1
 ),
@@ -25,8 +25,8 @@ VALUES
     'Test Man 3',
     $str$Test blog 3 description$str$,
     2022,
-    01,
-    24,
+    2,
+    23,
     2
 );
 
