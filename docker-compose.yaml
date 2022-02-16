@@ -10,7 +10,7 @@ services:
       - type: bind
         source: ./client
         target: /code
-    command: ["python -m http.server"]
+    command: ["http-server"]
   api:
     container_name: RN_api
     image: node:latest

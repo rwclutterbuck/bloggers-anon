@@ -28,7 +28,7 @@ class Blog {
     return new Promise(async (resolve, reject) => {
       try {
         let blogData = await db.query(`SELECT * FROM blogs WHERE id=$1;`, [id]);
-        let blog = new Blog(blogData);
+        let blog = new Blog(blogData.rows[0]);
         resolve(blog);
       } catch (err) {
         reject("Blogs not found");
@@ -62,13 +62,17 @@ class Blog {
             data.year,
             data.month,
             data.day,
+            // data.fingerprint_id,
           ]
         );
-        let newBlog = new Blog(blogData);
+        let newBlog = new Blog(blogData.rows[0]);
         resolve(newBlog);
       } catch (err) {
-        reject("Blog could not be created");
+        reject(err);
+        // reject("Blog could not be created");
       }
     });
   }
 }
+
+module.exports = Blog;

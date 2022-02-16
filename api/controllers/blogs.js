@@ -43,11 +43,11 @@ async function create(req, res) {
 
 module.exports = {
   index,
-  showByYr,
-  showByMonth,
-  showByDay,
+  // showByYr,
+  // showByMonth,
+  // showByDay,
   show,
   create,
-  update,
-  destroy,
+  // update,
+  // destroy,
 };
