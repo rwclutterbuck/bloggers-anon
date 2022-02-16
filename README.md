@@ -46,7 +46,6 @@ IN REVERSE ORDER FOR YOUR CONVENIENCE!
 - Add dayjs to package.json
 - Delete unneeeded comments
 - Rearrange fingerprint files
-- (upstream/dev-richard) current system stats
 - make SPA using 404.html w/ http-server
 - add fetch requests to server
 - Attempt to set up fingerprinting
@@ -62,7 +61,6 @@ IN REVERSE ORDER FOR YOUR CONVENIENCE!
 - Set up integration tests for blog routes
 - Set up test seeds and app - integrstion tests
 - Renamed tables
-- Add outline for DELETE route
 - change input margins to paddings
 - website layout complete
 - Set up server.js

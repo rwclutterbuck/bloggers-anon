@@ -21,7 +21,8 @@ function OnInput() {
 }
 
 async function getBlog(uri) {
-  console.log(uri);
+  const data = await fetch(`http://localhost:3000${uri}`);
+  showBlog(await data.json());
 }
 
 async function createBlog(e) {
@@ -41,15 +42,29 @@ async function createBlog(e) {
     },
   };
 
-  const res = await (
-    await fetch("http://localhost:3000/blogs", options)
-  ).json();
-  showBlog(res);
+  const res = await fetch("http://localhost:3000/blogs", options);
+  const newBlog = await res.json();
+  showBlog(newBlog);
+  uri = newBlog.route;
 }
 
 function showBlog(data) {
-  const date = `${data.day} ${data.month}`;
-
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const date = `${data.day} ${month[data.month - 1]}`;
+  console.log("test");
   const container = document.querySelector("#container");
   container.innerHTML = `
   <div class="card">
