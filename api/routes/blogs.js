@@ -9,5 +9,6 @@ router.get("/:year-:month-:day", booksController.showByDay);
 router.get("/:year-:month-:day/:id", booksController.showBlog);
 router.post("/", booksController.create);
 router.patch("/", booksController.update);
+router.delete("/:year-:month-:day/:id", booksController.destroy);
 
 module.exports = router;
