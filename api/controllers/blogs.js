@@ -1,5 +1,9 @@
 const Blog = require("../models/Blog");
 
+const dayjs = require("dayjs");
+var relativeTime = require("dayjs/plugin/relativeTime");
+dayjs.extend(relativeTime);
+
 async function index(req, res) {
   try {
     const blogs = await Blog.all;
@@ -20,34 +24,24 @@ async function show(req, res) {
 
 async function create(req, res) {
   try {
-    const blog = await Blog.create(req.body);
+    const data = req.body;
+    let date = dayjs()
+      .format("DD/MM/YYYY HH:mm:ss")
+      .split(" ")[0]
+      .toString()
+      .split("/");
+    data.year = parseInt(date[2]);
+    data.month = parseInt(date[1]);
+    data.day = parseInt(date[0]);
+    const blog = await Blog.create(data);
     res.status(201).json(blog);
   } catch (err) {
     res.status(422).json({ err });
   }
 }
 
-// SET UP ROUTES FOR REQUESTING POSTS BY DATE -------
-
-// async function showByYr(req, res) {}
-
-// async function showByMonth(req, res) {}
-
-// async function showByDay(req, res) {}
-
-// SET UP CRUD ROUTES -------------------------------
-
-// async function update(req, res) {}
-
-// async function destroy(req, res) {}
-
 module.exports = {
   index,
-  // showByYr,
-  // showByMonth,
-  // showByDay,
   show,
   create,
-  // update,
-  // destroy,
 };

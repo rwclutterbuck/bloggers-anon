@@ -91,12 +91,12 @@ describe("blog endpoints", () => {
     expect(bookRes.statusCode).toEqual(404);
   });
 
-  it("should not create a new blog with content over 500 characters", async () => {
+  it("should not create a new blog with content over 100 characters", async () => {
     const res = await request(api).post("/blogs").send({
       title: "Test Blog 4",
       author: "Test Man",
       content:
-        "YyYXJHN8ovVJHDYn7kOl1griWoH8rw3Q7vaAxeyopIDG2NTZRIwQbhY7ykbuwZE2ohowLvUcxDMncPX6hwkrYLX4CrP5Y3nKsb6A9xfOFSsKTYvpmFeTSkDYkJNeszfeNF7I2iQqxWfWSYWH5PRYTLJUnU9Lq8rq0LKi24BkG5OWYWO3W0Nt2YCsbuJYamiWzPutJVfZ4oDg9dQUBy64d6a5tGCrNgSfyPzeg2wWgPHBLGfDEZPYO1zGsumYIr8Wh9l4cpyr5zuozn6kBkEz5mXfiZsUiKnjDp2BxaoU2ZEitJBiJ86KNOYV7NaqltNEBIkSfCrwRZwwhUfUj3h1W1PVGfs3hTFjA7xw0a6ZeMGZCEfKJ7w4wloiR3WVk6JpEnSNJuuf6eA4azTDiTCPkTRprSg0yLZwHuN3WiFg3wq4AsYadddbmWIKxxMszxSyRo9ZmZEcqkicpyTXPvfnGQTaF4SLoynBT3Soy1BG4BGWu7D9R7MbI",
+        "YyYXJHN8ovVJHDYn7kOl1griWoH8rw3Q7vaAxeyopIDG2NTZRIwQbhY7ykbuwZE2ohowLvUcxDMncPX6hwkrYLX4CrP5Y3nKsb6A9xfOFSsKTYvpmFeTSkDYkJNeszfeNF7I2iQqxWfWSYWH5PRYTLJUnU9Lq8rq0LKi24BkG5OWYWO3W0Nt2YCsbuJYamiWzPutJVfZ4oDg9dQUBy64d6a5tGCrNgSfyPzeg2wWgPHBLGfDEZPYO1zGsumYIr8Wh9l4cpyr5zuozn6kBkEz5mXfiZsUiKnjDp2BxaoU2ZEitJBiJ86KNOYV7NaqltNEBIkSfCrwRZwwhUfUj3h1W1PVGfs3hTFjA7xw0a6ZeMGZCEfKJ7w4wloiR3WVk6JpEnSNJuuf6eA4azTDiTCPkTRprSg0yLZwHuN3WiFg3wq4AsYadddbmWIKxxMszxSyRo9ZmZEcqkicpyTXPvfnGQTaF4SLoynBT3Soy1BG4BGWu7D9R7MbIYyYXJHN8ovVJHDYn7kOl1griWoH8rw3Q7vaAxeyopIDG2NTZRIwQbhY7ykbuwZE2ohowLvUcxDMncPX6hwkrYLX4CrP5Y3nKsb6A9xfOFSsKTYvpmFeTSkDYkJNeszfeNF7I2iQqxWfWSYWH5PRYTLJUnU9Lq8rq0LKi24BkG5OWYWO3W0Nt2YCsbuJYamiWzPutJVfZ4oDg9dQUBy64d6a5tGCrNgSfyPzeg2wWgPHBLGfDEZPYO1zGsumYIr8Wh9l4cpyr5zuozn6kBkEz5mXfiZsUiKnjDp2BxaoU2ZEitJBiJ86KNOYV7NaqltNEBIkSfCrwRZwwhUfUj3h1W1PVGfs3hTFjA7xw0a6ZeMGZCEfKJ7w4wloiR3WVk6JpEnSNJuuf6eA4azTDiTCPkTRprSg0yLZwHuN3WiFg3wq4AsYadddbmWIKxxMszxSyRo9ZmZEcqkicpyTXPvfnGQTaF4SLoynBT3Soy1BG4BGWu7D9R7MbI",
       year: 2022,
       month: 2,
       day: 16,
