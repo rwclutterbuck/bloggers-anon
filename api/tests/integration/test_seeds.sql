@@ -9,7 +9,7 @@ VALUES
     2022,
     1,
     23,
-    1
+    -- 1
 ),
 (
     'Test Blog 2', 
@@ -18,7 +18,7 @@ VALUES
     2022,
     1,
     22,
-    1
+    -- 2
 ),
 (
     'Test Blog 3',
@@ -27,7 +27,7 @@ VALUES
     2022,
     2,
     23,
-    2
+    -- 3
 );
 
 -- INSERT INTO fingerprints (hash)

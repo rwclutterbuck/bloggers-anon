@@ -48,7 +48,7 @@ describe("blog endpoints", () => {
       year: 2022,
       month: 2,
       day: 16,
-      fingerprint_id: 3,
+      // fingerprint_id: 3,
     });
     expect(res.statusCode).toEqual(201);
     expect(res.body).toHaveProperty("id");
@@ -65,7 +65,7 @@ describe("blog endpoints", () => {
       year: 2022,
       month: 2,
       day: 16,
-      fingerprint_id: 3,
+      // fingerprint_id: 3,
     });
     expect(res.statusCode).toEqual(422);
     expect(res.body).toHaveProperty("err");
@@ -82,7 +82,7 @@ describe("blog endpoints", () => {
       year: 2022,
       month: 2,
       day: 16,
-      fingerprint_id: 3,
+      // fingerprint_id: 3,
     });
     expect(res.statusCode).toEqual(422);
     expect(res.body).toHaveProperty("err");
@@ -100,7 +100,7 @@ describe("blog endpoints", () => {
       year: 2022,
       month: 2,
       day: 16,
-      fingerprint_id: 3,
+      // fingerprint_id: 3,
     });
     expect(res.statusCode).toEqual(422);
     expect(res.body).toHaveProperty("err");
