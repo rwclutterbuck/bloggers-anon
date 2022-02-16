@@ -1,7 +1,5 @@
 const db = require("../dbConfig/init");
 
-const Fingerprint = require("./Fingerprint");
-
 class Blog {
   constructor(data) {
     (this.id = data.id),
@@ -69,7 +67,7 @@ class Blog {
         let newBlog = new Blog(blog);
         resolve(newBlog);
       } catch (err) {
-        reject("Blogs not found");
+        reject("Blog could not be created");
       }
     });
   }
