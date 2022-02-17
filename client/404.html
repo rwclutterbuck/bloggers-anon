@@ -7,8 +7,20 @@
     <title>BlogIt</title>
     <!-- add favicon -->
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdeliver.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
   </head>
   <body>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        FingerprintJS.load()
+          .then((fp) => {
+            return fp.get;
+          })
+          .then((result) => {
+            console.log(result.visitorId);
+          });
+      });
+    </script>
     <div id="container">
       <form action="" class="card">
         <textarea
