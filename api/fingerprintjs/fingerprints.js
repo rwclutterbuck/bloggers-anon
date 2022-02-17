@@ -1,18 +1,11 @@
-const { FingerprintJS } = require("@fingerprintjs/fingerprintjs");
-
-const Fingerprint = require("../models/Fingerprint");
+const Fingerprint = require("./fingerprintModel");
 
 async function correctFingerprint(req, res) {
   try {
-    const fpPromise = FingerprintJS.load();
-    (async () => {
-      const fp = await fpPromise;
-      const result = await fp.get();
-      // console.log(result.visitorId);
-      const fingerprint = new Fingerprint(result.visitorId);
-      const boolean = fingerprint.checker();
-      res.json({ access: boolean });
-    })();
+    const hash = req.body.hash;
+    const fingerprint = new Fingerprint(hash);
+    const bool = await fingerprint.checker();
+    res.json({ access: bool });
   } catch (err) {
     res.status().json({ err });
   }

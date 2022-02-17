@@ -12,8 +12,7 @@ server.get("/", (req, res) => {
 const blogRoutes = require("./routes/blogs");
 server.use("/blogs", blogRoutes);
 
-// -------------- PLEASE IGNORE THIS ------------------------
-// const fingerprintRoutes = require("./routes/fingerprint");
-// server.use("/fingerprint", fingerprintRoutes);
+const fingerprintRoutes = require("./fingerprintjs/fingerprintRoutes");
+server.use("/fingerprint", fingerprintRoutes);
 
 module.exports = server;
