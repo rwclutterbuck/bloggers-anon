@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const fingerprintController = require("../controllers/fingerprint");
+const fingerprintController = require("./fingerprints");
 
-router.get("/", fingerprintController.correctFingerprint);
+router.post("/", fingerprintController.correctFingerprint);
 
 module.exports = router;
