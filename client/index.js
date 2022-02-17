@@ -64,7 +64,6 @@ function showBlog(data) {
     "December",
   ];
   const date = `${data.day} ${month[data.month - 1]}`;
-  console.log("test");
   const container = document.querySelector("#container");
   container.innerHTML = `
   <div class="card">
