@@ -1,9 +1,7 @@
 let uri = window.location.pathname;
 
-const form = document.querySelector("form");
-form.addEventListener("submit", createBlog);
-
 !(uri == "/") && getBlog(uri);
+uri == "/" && getForm();
 
 // https://stackoverflow.com/questions/454202/creating-a-textarea-with-auto-resize
 const tx = document.getElementsByTagName("textarea");
@@ -22,7 +20,11 @@ function OnInput() {
 
 async function getBlog(uri) {
   const data = await fetch(`http://localhost:3000${uri}`);
-  showBlog(await data.json());
+  if(data.ok){
+    showBlog(await data.json());
+  } else {
+    getNotFound()
+  }
 }
 
 async function createBlog(e) {
@@ -64,7 +66,6 @@ function showBlog(data) {
     "December",
   ];
   const date = `${data.day} ${month[data.month - 1]}`;
-  console.log("test");
   const container = document.querySelector("#container");
   container.innerHTML = `
   <div class="card">
@@ -84,4 +85,47 @@ function showBlog(data) {
   content.textContent = data.content;
 
   window.history.pushState("object or string", "Title", data.route);
+}
+
+function getForm() {
+ const form = `
+  <form action="" class="card">
+    <textarea
+    class="title"
+    name="title"
+    id="title"
+    placeholder="title"
+    rows="1"
+    maxlength="50"
+    required
+    ></textarea>
+    <input
+    type="text"
+    class="author"
+    name="author"
+    id="author"
+    maxlength="50"
+    placeholder="your name"
+    />
+    <textarea
+    name="content"
+    id="content"
+    class="content"
+    placeholder="blog"
+    maxlength="1000"
+    required
+    ></textarea>
+    <button type="submit" class="button">PUBLISH</button>
+  </form>
+  `
+  const container = document.querySelector("#container");
+  container.innerHTML = form;
+
+  const formEvent = document.querySelector("form");
+  formEvent.addEventListener("submit", createBlog);
+}
+
+function getNotFound() {
+  const container = document.querySelector("#container");
+  container.innerHTML = `<h1 class="card">404 - Page Not Found</h1>`;
 }
