@@ -40,8 +40,29 @@ async function create(req, res) {
   }
 }
 
+async function edit(req, res) {
+  try {
+    const blog = await Blog.findById(parseInt(req.params.id));
+    res.status(200).json(blog);
+  } catch (err) {
+    res.status(404).json({ err });
+  }
+}
+
+async function destroy(req, res) {
+  try {
+    const blog = await Blog.findById(parseInt(req.params.id));
+    await blog.destroy();
+    res.status(204);
+  } catch (err) {
+    res.status(404).json({ err });
+  }
+}
+
 module.exports = {
   index,
   show,
   create,
+  edit,
+  destroy,
 };

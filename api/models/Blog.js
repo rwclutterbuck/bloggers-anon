@@ -1,4 +1,5 @@
 const db = require("../dbConfig/init");
+const Fingerprint = require("../fingerprintjs/fingerprintModel");
 
 class Blog {
   constructor(data) {
@@ -57,6 +58,27 @@ class Blog {
         resolve(newBlog);
       } catch (err) {
         reject(err);
+      }
+    });
+  }
+
+  destroy() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const result = await db.query(
+          `DELETE FROM blogs WHERE id=$1 RETURNING fingerprint_id;`,
+          [this.id]
+        );
+        const fingerprint = await Fingerprint.findById(
+          result.rows[0].fingerprint_id
+        );
+        const blogs = fingerprint.blogs;
+        if (!blogs.length) {
+          await fingerprint.destroy();
+        }
+        resolve("Blog has been deleted");
+      } catch (err) {
+        reject("Blogs could not be deleted");
       }
     });
   }
