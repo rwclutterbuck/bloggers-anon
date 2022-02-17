@@ -32,7 +32,7 @@ class Blog {
         let blog = new Blog(blogData.rows[0]);
         resolve(blog);
       } catch (err) {
-        reject("Blogs not found");
+        reject("Blog not found");
       }
     });
   }
@@ -65,7 +65,7 @@ class Blog {
   update(data) {
     return new Promise(async (resolve, reject) => {
       try {
-        const updatedBlogData = db.query(
+        const updatedBlogData = await db.query(
           `UPDATE blogs
             SET title=$1, content=$2, year=$3, month=$4, day=$5 
             WHERE id=$4
