@@ -42,8 +42,8 @@ class Blog {
       try {
         let blogData = await db.query(
           `INSERT INTO blogs (title, author, content, year, month, day)
-        VALUES ($1, $2, $3, $4, $5, $6)
-        RETURNING *;`,
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING *;`,
           [
             data.title,
             data.author,
@@ -58,6 +58,24 @@ class Blog {
         resolve(newBlog);
       } catch (err) {
         reject(err);
+      }
+    });
+  }
+
+  update(data) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const updatedBlogData = db.query(
+          `UPDATE blogs
+            SET title=$1, content=$2, year=$3, month=$4, day=$5 
+            WHERE id=$4
+            RETURNING *;`,
+          [data.title, data.content, data.year, data.month, data.day]
+        );
+        const updatedBlog = new Blog(updatedBlogData.rows[0]);
+        resolve(updatedBlog);
+      } catch (err) {
+        reject("Blog could not be updated");
       }
     });
   }

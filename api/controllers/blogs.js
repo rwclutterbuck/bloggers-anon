@@ -40,12 +40,22 @@ async function create(req, res) {
   }
 }
 
-async function edit(req, res) {
+async function update(req, res) {
   try {
     const blog = await Blog.findById(parseInt(req.params.id));
-    res.status(200).json(blog);
+    const data = req.body;
+    let date = dayjs()
+      .format("DD/MM/YYYY HH:mm:ss")
+      .split(" ")[0]
+      .toString()
+      .split("/");
+    data.year = parseInt(date[2]);
+    data.month = parseInt(date[1]);
+    data.day = parseInt(date[0]);
+    const updatedBlog = await blog.update(data);
+    res.status(200).json(updatedBlog);
   } catch (err) {
-    res.status(404).json({ err });
+    res.status(500).json({ err });
   }
 }
 
@@ -55,7 +65,7 @@ async function destroy(req, res) {
     await blog.destroy();
     res.status(204);
   } catch (err) {
-    res.status(404).json({ err });
+    res.status(500).json({ err });
   }
 }
 
@@ -63,6 +73,6 @@ module.exports = {
   index,
   show,
   create,
-  edit,
+  update,
   destroy,
 };
