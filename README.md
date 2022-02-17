@@ -21,6 +21,7 @@ Note: Please ignore folder `fingerprintjs`. It has been left in on purpose but d
 - Navigate to the `bloggers-anon` folder at the command line
 - Run `bash _scripts/start.sh` to install dependencies and start the client and server
 - When finished run `bash _scripts/stop.sh` to remove containers and volumes
+- Paste `http://localhost` into the URL of your browser
 
 ### Testing
 
