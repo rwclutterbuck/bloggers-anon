@@ -111,7 +111,9 @@ describe("Blog", () => {
   //     jest
   //       .spyOn(Fingerprint, "findById")
   //       .mockResolvedValueOnce(new Fingerprint({ id: 1, hash: 23 }));
-  //     // jest.spyOn(Fingerprint, "blogs").mockResolvedValueOnce([{ blogData }]);
+  //     jest
+  //       .spyOn(Fingerprint.prototype, "blogs")
+  //       .mockResolvedValueOnce([{ blogData }]);
   //     const testBlog = new Blog(blogData);
   //     const destroy = await testBlog.destroy();
   //     expect(destroy).toBe("Blog has been deleted");
