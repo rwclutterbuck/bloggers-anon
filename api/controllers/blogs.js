@@ -63,7 +63,7 @@ async function destroy(req, res) {
   try {
     const blog = await Blog.findById(parseInt(req.params.id));
     await blog.destroy();
-    res.status(204);
+    res.status(204).end();
   } catch (err) {
     res.status(500).json({ err });
   }

@@ -80,7 +80,7 @@ IN REVERSE ORDER FOR YOUR CONVENIENCE!
 
 ## Bugs
 
-- dayjs doesn't work
+-
 
 ## Future Implementations
 
@@ -88,3 +88,12 @@ IN REVERSE ORDER FOR YOUR CONVENIENCE!
   - Allow said users to edit posts
   - Allow them to delete posts
 - Allow searching of posts by day, month, and year
+
+### Noah's Tasks
+
+- Make it so fingerprint only gets added to the database if the user makes a post (Easier to deal with on client side)
+- Create blog method "findByDate"
+  - Pass in date params from query string
+  - If day or month undefined then ignore
+  - Return all blogs satisfying query params
+  - Use `window.location.pathname` to get query string from URL ?

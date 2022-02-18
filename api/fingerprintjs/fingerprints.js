@@ -5,7 +5,7 @@ async function correctFingerprint(req, res) {
     const hash = req.body.hash;
     const fingerprint = new Fingerprint(hash);
     const bool = await fingerprint.checker();
-    res.json({ access: bool });
+    res.status(200).json({ access: bool });
   } catch (err) {
     res.status().json({ err });
   }
