@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js --legacy-watch",
-    "test": "jest --watch --silent"
+    "test": "jest --watch --silent",
+    "unitTests": "jest --testPathPattern=/unit/ --watchAll --verbose",
+    "coverage": "jest --testPathPattern=/unit/ --coverage"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,8 @@
     "pg": "^8.7.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   }
 }
