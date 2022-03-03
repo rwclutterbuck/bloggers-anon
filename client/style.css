@@ -1,0 +1,85 @@
+:root {
+  --primary: rgb(148 163 184);
+  --secondary: rgb(226 232 240);
+  --background: rgb(30 41 59);
+}
+
+input,
+textarea {
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background-color: var(--secondary);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+}
+
+.card {
+  display: grid;
+  justify-items: center;
+  background-color: var(--primary);
+  padding: 2rem;
+  width: fit-content;
+  width: 60vw;
+  margin: 3rem auto;
+  border-radius: 0 5rem 0 5rem;
+}
+
+.title,
+.author,
+.content {
+  padding: 0.5rem;
+  background-color: var(--primary);
+  /* width: max(100%, 50vw); */
+  width:50vw;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.author {
+  font-size: 0.75rem;
+}
+
+.content {
+  font-size: 1rem;
+}
+
+.button {
+  width: 15ch;
+  height: 2.5rem;
+  justify-self: center;
+  background-color: var(--secondary);
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    margin-top: 0;
+    border-radius: 0 0 0 5rem;
+    width: 90vw;
+  }
+  .title,
+  .author,
+  .content {
+    width: 80vw;
+  }
+}

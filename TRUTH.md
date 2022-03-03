@@ -1,0 +1,74 @@
+# Source of Truth
+
+## Frontend
+- [ ] CSS to create site
+  - [x] Form containing
+    - [x] input; text; title
+    - [x] input; text; author
+    - [x] input; textarea; content; expands as user types
+    - [x] button; submit;
+- [ ] Link submit button to server
+- [ ] If time allows
+  - [ ] Auth; fingerprintjs
+  - [ ] Edit
+    - turn elements into form
+
+## Backend
+- [ ] View
+  - [ ] `/` create form path to server
+  - [ ] `/` read all blogs
+  - [ ] `/:year` read all blog posts in a given year
+  - [ ] `/:year-:month` read all blog posts in a given month
+  - [ ] `/:year-:month-:day` read all blog posts on a given day
+  - [ ] `/:year-:month-:day-:id` read blog post
+  - [ ] `/:year-:month-:day-:id` update if auth matches, allow edit (if time allows)
+  - [ ] `/:year-:month-:day-:id` delete if auth matches, allow delete (if time allows)
+- [ ] Controller
+  - [ ] blog.js
+    - [ ] `index`
+      - recieve nothing, return all blogs
+    - [ ] `show`
+      - recieve params {year, month, day, id}
+        - use guard clauses to check for valid requests (and existing params)    
+      - return `{}` containing all matching blogs
+    - [ ] `create`
+      - recieve body
+      - return blog route
+    - [ ] `edit`
+      - recieve body for an existing route (if time allows)
+      - return new post
+    - [ ] `delete`
+      - recieve params
+      - return `undefined`
+- [ ] Model
+  - [ ] Blog.js
+    - [ ] blog params
+      - id
+      - title
+      - author
+      - content
+      - year
+      - month
+      - day
+      - fingerprintId
+    - [ ] findById
+    - [ ] findByDay
+    - [ ] findByMonth
+    - [ ] findByYear
+    - [ ] create
+    - [ ] edit
+    - [ ] destroy
+- [ ] Database
+  - [ ] postgres
+    - [ ] blogs
+      - id int
+      - title varchar
+      - author varchar
+      - content varchar
+      - year int
+      - month int
+      - day int
+      - fingerprintId
+    - [ ] fingerprints
+      - id int
+      - fingerprintHash varchar
